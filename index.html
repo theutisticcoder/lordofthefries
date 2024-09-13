@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord Of The Fries</title>
+    <script type="module" src="https://konsumer.js.org/raylib-wasm/raylib.js"></script>
+</head>
+<body>
+    <raylib-game>
+        const InitGame = async () => {
+            InitWindow(800, 450)
+          }
+          
+          const UpdateGame = (ts) => {
+            BeginDrawing()
+            ClearBackground(RAYWHITE)
+            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+            DrawFPS(10, 10)
+            EndDrawing()
+          }
+    </raylib-game>
+</body>
+</html>
