@@ -10,9 +10,9 @@
 
 <body>
   <raylib-game>
-    var camra, map;
+    var camera, map;
     const InitGame = async () => {
-    InitWindow(800, 450);
+    InitWindow(GetScreenWidth(), GetScreenHeight());
      camera = new Camera();
     camera.position = new Vector3(1,1,1) // Camera position
 
