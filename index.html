@@ -14,6 +14,8 @@
  <canvas id="render"></canvas>
  <script>
   const canvas = document.getElementById("render"); // Get the canvas element
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
   const createScene = function () {
       // Creates a basic Babylon Scene object
@@ -30,7 +32,7 @@
           new BABYLON.Vector3(0, 1, 0), scene);
       // Dim the light a small amount - 0 to 1
       light.intensity = 0.7;
-     const map = BABYLON.SceneLoader.ImportMeshAsync("map", ".", "map.glb", scene);
+     const map = BABYLON.SceneLoader.ImportMeshAsync("map", "/", "map.glb", scene);
 
       return scene;
   };
