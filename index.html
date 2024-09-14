@@ -6,31 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lord Of The Fries</title>
   <script type="module" src="https://konsumer.js.org/raylib-wasm/raylib.js"></script>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
-      }
-    }
-  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
+<model-viewer style="height: 5000px; width: 5000px;" src="map.glb"></model-viewer>
 
 <body>
-  <script type="module">
-   import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-   const loader = new GLTFLoader();
-
-loader.load( 'map.glb', function ( gltf ) {
-
-	scene.add( gltf.scene );
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
-    </script>
 </body>
 
 </html>
