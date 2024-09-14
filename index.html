@@ -12,8 +12,8 @@
   <raylib-game>
     var camera, map;
     const InitGame = async () => {
-    InitWindow(GetScreenWidth(), GetScreenHeight());
-     camera = new Camera();
+    InitWindow(4000, 3000);
+    camera = new Camera();
     camera.position = new Vector3(1,1,1) // Camera position
 
     camera.target = new Vector3( 0.185, 0.4, 0 ); // Camera looking at point
