@@ -12,7 +12,7 @@
   <raylib-game>
     let camera, map;
     const InitGame = async () => {
-    InitWindow(4000, 3000);
+    InitWindow(1000, 750);
     camera = new Camera();
     camera.position = new Vector3(1,1,1) // Camera position
 
@@ -28,7 +28,7 @@
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode3D(camera);
-    DrawModel(map, new Vector3(1,0,1), 1, WHITE);
+    DrawModel(map, new Vector3(0,0,0), 1, WHITE);
     EndMode3D();
     DrawFPS(10, 10);
     EndDrawing();
