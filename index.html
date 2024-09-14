@@ -6,33 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lord Of The Fries</title>
   <script type="module" src="https://konsumer.js.org/raylib-wasm/raylib.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <raylib-game>
-    let camera, map;
-    const InitGame = async () => {
-    InitWindow(1000, 750);
-    camera = new Camera();
-    camera.position = new Vector3(1,0.4,1) // Camera position
+  <script type="module">
+   import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+   const loader = new GLTFLoader();
 
-    camera.target = new Vector3( 0.185, 0.4, 0 ); // Camera looking at point
-    camera.up = new Vector3 (0, 1, 0) ; // Camera up vector (rotation towards target)
-    camera.fovy = 45; // Camera field-of-view Y
-    camera.projection = CAMERA_PERSPECTIVE;
-     map = LoadModel("map.glb");
-    }
+loader.load( 'map.glb', function ( gltf ) {
 
-    const UpdateGame = (ts) => {
-    UpdateCamera(camera, CAMERA_FIRST_PERSON);
-    BeginDrawing();
-    ClearBackground(BLACK);
-    BeginMode3D(camera);
-    DrawModel(map, new Vector3(1,0,1), 1, WHITE);
-    EndMode3D();
-    EndDrawing();
-    }
-  </raylib-game>
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
+    </script>
 </body>
 
 </html>
