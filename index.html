@@ -10,13 +10,13 @@
     <raylib-game>
         const InitGame = async () => {
             InitWindow(800, 450)
-            const map = LoadModel("map.glb");
+            const map = LoadModel("map.glb")
           }
           
           const UpdateGame = (ts) => {
             BeginDrawing()
             ClearBackground(RAYWHITE)
-            DrawModel(map, (Vector3){0,0,0}, 1, WHITE);
+            DrawModel(map, (Vector3){0,0,0}, 1, WHITE)
             DrawFPS(10, 10)
             EndDrawing()
           }
