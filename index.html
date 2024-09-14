@@ -26,9 +26,9 @@
     const UpdateGame = (ts) => {
     UpdateCamera(camera, CAMERA_FIRST_PERSON);
     BeginDrawing();
-    ClearBackground(RAYWHITE);
+    ClearBackground(BLACK);
     BeginMode3D(camera);
-    DrawModel(map, new Vector3(-16,0,-8), 1, BLACK);
+    DrawModel(map, new Vector3(1,0,1), 1, WHITE);
     EndMode3D();
     DrawFPS(10, 10);
     EndDrawing();
