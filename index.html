@@ -24,11 +24,11 @@
     }
 
     const UpdateGame = (ts) => {
-    UpdateCamera(camera, CAMERA_FIRST_PERSON);
+    UpdateCamera(&camera, CAMERA_FIRST_PERSON);
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode3D(camera);
-    DrawModel(map, new Vector3(0,0,0), 1, WHITE);
+    DrawModel(map, new Vector3(2,2,2), 1, WHITE);
     EndMode3D();
     DrawFPS(10, 10);
     EndDrawing();
