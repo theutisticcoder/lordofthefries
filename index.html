@@ -20,14 +20,14 @@
     camera.up = new Vector3 (0, 1, 0) ; // Camera up vector (rotation towards target)
     camera.fovy = 45; // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;
-     map = new Model(LoadModel("map.glb"));
+     map = LoadModel("map.glb");
     }
 
     const UpdateGame = (ts) => {
     BeginDrawing();
     ClearBackground(RAYWHITE);
     BeginMode3D(camera);
-    DrawModel(map, new Vector3(1,1,1), 1, BLACK);
+    DrawModel(map, new Vector3(-1,1,-1), 1, BLACK);
     EndMode3D();
     DrawFPS(10, 10);
     EndDrawing();
