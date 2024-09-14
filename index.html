@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lord Of The Fries</title>
-  <script type="module" src="https://konsumer.js.org/raylib-wasm/raylib.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/raylib/index.min.js"></script>
 </head>
 
 <body>
-  <raylib-game>
+  <script>
     var camera, map;
     const InitGame = async () => {
     InitWindow(4000, 3000);
@@ -33,7 +33,7 @@
     DrawFPS(10, 10);
     EndDrawing();
     }
-  </raylib-game>
+  </script>
 </body>
 
 </html>
