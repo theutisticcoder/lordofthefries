@@ -5,13 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lord Of The Fries</title>
-  <script type="module">
-    import raylibWasm from 'https://cdn.jsdelivr.net/npm/raylib-wasm@0.0.1/+esm'
-    </script>
-    </head>
+  <script type="module" src="https://konsumer.js.org/raylib-wasm/raylib.js"></script>
+</head>
 
 <body>
-  <raylib-game>
+  <raylib-game fill>
     let camera, map;
     const InitGame = async () => {
     InitWindow(1000, 750);
