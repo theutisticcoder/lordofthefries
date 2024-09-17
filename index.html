@@ -14,21 +14,12 @@
     const InitGame = async () => {
     InitWindow(1000, 750);
     camera = new Camera3D();
-    camera.position.x = -1
-    camera.position.y = -1
-    camera.position.z = -1
-  
-    camera.target.x = 0.185
-    camera.target.y = 0.4
-    camera.target.z = 0
-  
-    camera.up.x = 0
-    camera.up.y = 1
-    camera.up.z = 0
-  
-    camera.fovy = 45
-    camera.projection = CAMERA_PERSPECTIVE
-     map = new Model(LoadModel("map.glb"));
+    camera.position = new Vector3({x: 1,y: 1,z: 1}) // Camera position
+    camera.target = new Vector3({x: 0.185,y: 0.4,z: 0 }); // Camera looking at point
+    camera.up = new Vector3 ({x:0,y: 1, z:0}) ; // Camera up vector (rotation towards target)
+    camera.fovy = 45; // Camera field-of-view Y
+    camera.projection = CAMERA_PERSPECTIVE;
+     map = LoadModel("map.glb");
     }
 
     const UpdateGame = (ts) => {
@@ -36,7 +27,7 @@
     BeginDrawing();
     ClearBackground(BLACK);
     BeginMode3D(camera);
-    DrawModel(map, new Vector3(2,2,2), 1, WHITE);
+    DrawModel(map, new Vector3({x:2,y:2,z:2}), 1, WHITE);
     EndMode3D();
     EndDrawing();
     }
