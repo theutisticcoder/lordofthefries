@@ -1,16 +1,19 @@
-const raylib = require('raylib');
+const { createServer } = require("http");
+const { Server } = require("socket.io");
 
-  const screenWidth = 800;
-  const screenHeight = 450;
+const httpServer = createServer();
+const io = new Server(httpServer);
 
-  raylib.initWindow(screenWidth, screenHeight, "raylib with Node.js");
-  raylib.setTargetFPS(60);
+io.on("connection", (socket) => {
+  socket.on("id", id=> {
+    socket.broadcast.emit("sendid", id)
+  })
+  socket.on("returnid", ()=> {
+    socket.emit("otherid", id);
+  })
+  socket.on("move", data=> {
+    socket.broadcast.emit("moved", data);
+  })
+});
 
-  while (!raylib.windowShouldClose()) {
-      raylib.beginDrawing();
-      raylib.clearBackground(raylib.RAYWHITE);
-      raylib.drawText("Hello, raylib!", 190, 200, 20, raylib.LIGHTGRAY);
-      raylib.endDrawing();
-  }
-
-  raylib.closeWindow();
+httpServer.listen(3000);
