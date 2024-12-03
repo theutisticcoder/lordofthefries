@@ -1,8 +1,9 @@
-const { createServer } = require("http");
+const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
 const { Server } = require("socket.io");
-
-const httpServer = createServer();
-const io = new Server(httpServer);
+const io = new Server(server);
 
 io.on("connection", (socket) => {
   socket.on("id", id=> {
@@ -16,4 +17,7 @@ io.on("connection", (socket) => {
   })
 });
 
-httpServer.listen(3000);
+
+server.listen(3000, () => {
+  console.log('listening on *:3000');
+});
