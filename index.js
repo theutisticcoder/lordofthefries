@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 io.on("connection", (socket) => {
+  console.log("connected!")
   socket.on("id", id=> {
     socket.broadcast.emit("sendid", id)
   })
