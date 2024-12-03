@@ -11,7 +11,7 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("sendid", id)
   })
   socket.on("returnid", id=> {
-    socket.emit("otherid", id);
+    socket.broadcast.emit("otherid", id);
   })
   socket.on("move", data=> {
     socket.broadcast.emit("moved", data);
