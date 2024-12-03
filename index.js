@@ -17,7 +17,7 @@ io.on("connection", (socket) => {
   })
 });
 
-
+app.use(express.static(__dirname))
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
