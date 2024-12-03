@@ -9,7 +9,7 @@ io.on("connection", (socket) => {
   socket.on("id", id=> {
     socket.broadcast.emit("sendid", id)
   })
-  socket.on("returnid", ()=> {
+  socket.on("returnid", id=> {
     socket.emit("otherid", id);
   })
   socket.on("move", data=> {
